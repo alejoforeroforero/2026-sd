@@ -3,12 +3,12 @@ global.window = {};
 require('./questions.js');
 const { topics, questions } = window.QUIZ_DATA;
 assert.equal(topics.length, 15);
-assert.equal(questions.length, 120);
-assert.equal(new Set(questions.map(q => q.id)).size, 120);
-assert.equal(questions.filter(q => q.type === 'choice').length, 75);
-assert.equal(questions.filter(q => q.type === 'blank').length, 45);
+assert.equal(questions.length, 138);
+assert.equal(new Set(questions.map(q => q.id)).size, 138);
+assert.equal(questions.filter(q => q.type === 'choice').length, 87);
+assert.equal(questions.filter(q => q.type === 'blank').length, 51);
 for (const topic of topics) {
-  assert.equal(questions.filter(q => q.topic === topic.id).length, 8, topic.id);
+  assert.equal(questions.filter(q => q.topic === topic.id).length, topic.id === 'foundations' ? 26 : 8, topic.id);
   assert.ok(topic.source);
 }
 for (const q of questions) {
@@ -23,4 +23,4 @@ for (const q of questions) {
     assert.ok(q.answers.length && q.answers.every(a => typeof a === 'string' && a.trim()), q.id);
   }
 }
-console.log('Verified: 120 unique questions, 15 balanced topics, 75 choice / 45 blank, valid answers and explanations.');
+console.log('Verified: 138 unique questions, 15 topics, 87 choice / 51 blank; 18 added requirements/architecture questions, valid answers and explanations.');

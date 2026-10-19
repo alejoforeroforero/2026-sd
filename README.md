@@ -1,6 +1,6 @@
 # Systems After Hours
 
-A buildless system design study quiz: **120 questions across 15 topics**, with **75 multiple-choice** and **45 fill-in-the-blank** questions. Plain HTML, CSS, and JavaScript. No dependencies, backend, database, account, or build command.
+A buildless system design study quiz: **138 questions across 15 topics**, with **87 multiple-choice** and **51 fill-in-the-blank** questions. Plain HTML, CSS, and JavaScript. No dependencies, backend, database, account, or build command.
 
 ## Run
 
@@ -51,9 +51,21 @@ Implementation references: [WebKit Home Screen web apps](https://webkit.org/blog
 - Data stays on the current browser/device and does not synchronize. Clearing site data removes it. The quiz still works in memory if storage is unavailable.
 - Keyboard: Tab/arrow keys for controls, 1–4 to choose an option when not typing, Enter to submit/check or continue. Native radio controls also support arrows and Space.
 
+## Functional, non-functional, or architecture?
+
+Choose **Requirements & architecture** from the topic list (or Explore topics on mobile) for focused practice. Select **All** to practice its 26 questions. New questions are also included in randomized mixed sessions.
+
+| Stage | Question it answers | Example |
+| --- | --- | --- |
+| Functional requirements | What can users do? | Upload and share files. |
+| Non-functional requirements | How well must it work? | Durable storage; updates within one second under agreed conditions. |
+| High-level architecture | What components support that? | Object storage, metadata database, backend API, SSE. |
+
+The new scenarios ask you to classify statements, match the question to the stage, correct misplaced component choices, and distinguish a capability from a quality target and its supporting design. Explanations compare the categories rather than relying on isolated keywords. Existing question IDs and the saved-progress version are unchanged, so earlier progress and sessions remain valid. The offline file cache is versioned separately to deliver the expanded bank.
+
 ## Content and coverage
 
-Topics: requirements/architecture, networking/delivery, databases/modeling, APIs, scaling/capacity, reliability/recovery, caching/consistency, real-time systems, concurrency, security/access, frontend state, rendering/fetching, performance/accessibility, debugging/races, and testing/deployment. Eight questions per topic (five choice, three blanks).
+Topics: requirements/architecture, networking/delivery, databases/modeling, APIs, scaling/capacity, reliability/recovery, caching/consistency, real-time systems, concurrency, security/access, frontend state, rendering/fetching, performance/accessibility, debugging/races, and testing/deployment. Requirements & architecture has 26 questions, including 18 focused comparisons based on your reference table (12 choice, six blanks). The other topics each have eight questions (five choice, three blanks).
 
 The content is based on the existing SD practice material through Day 14: the collaborative task-management study guide and interview; Days 2–9 networking, PERC data/API/scaling/reliability, collaborative editing and trade-offs; Day 10 frontend architecture/state ownership; Day 11 rendering/fetching/caching; Day 12 performance/accessibility; Day 13 debugging; Day 14 testing/review/deployment. The URL-shortener scenario also draws from the project prompts. Some questions turn the lessons into a small application or calculation exercise.
 
@@ -80,4 +92,4 @@ Node is optional and only needed for this authoring check:
 node check-bank.cjs
 ```
 
-It checks IDs, topic distribution, correct-answer membership, unique choices, blank aliases, and the expected 120-question inventory. The app itself does not require Node.
+It checks IDs, topic distribution, correct-answer membership, unique choices, blank aliases, and the expected 138-question inventory. The app itself does not require Node.

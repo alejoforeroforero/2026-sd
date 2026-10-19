@@ -30,3 +30,15 @@ Verified in fresh Chromium contexts with mobile viewport, touch, and high pixel 
 - Visually inspected the mobile home and feedback screenshots. No JavaScript page errors were captured during the fresh-context checks.
 
 Actual iOS Safari, the on-screen iPhone keyboard, safe-area dimensions supplied by iOS, and the operating system’s Add to Home Screen flow were not available to test on physical hardware. These remain a device verification step after HTTPS deployment. Setup instructions are in `README.md`.
+
+## Requirements classification expansion
+
+Added 18 questions based on the supplied functional / non-functional / high-level architecture table: 12 multiple-choice and six blanks. The bank now has 138 questions (87 choice / 51 blank); the foundations topic has 26 questions.
+
+- Bank inventory and JavaScript syntax checks passed.
+- Compared every original question object against the previous Git commit: all 120 original IDs, prompts, answers, choices, and explanations are unchanged. The saved-data version remains 1.
+- Completed all 26 foundations questions through a fresh 390×844 touch-emulated browser context. All 18 new questions appeared, accepted their correct answers or aliases, and displayed feedback without horizontal overflow or JavaScript errors.
+- Seeded earlier progress and a bookmark before the session; both survived the update, and the completed-session count increased correctly.
+- Disabled the network and reloaded: the updated 138-question bank loaded from the v3 offline cache, and the visible format totals were 87 choice / 51 blank.
+
+These are local browser-emulation checks, not a physical iPhone test.
