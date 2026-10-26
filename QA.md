@@ -56,3 +56,9 @@ Added 45 questions: 15 each for React, Next.js, and Node.js & JavaScript. The ba
 - After disabling the network and reloading, the v4 cache supplied the 183-question bank and all 18 topics; selecting Next.js created its full 15-question session offline.
 
 These checks use Chromium mobile emulation, not physical iPhone Safari. Primary references were checked on October 26, 2026; Next.js material specifies the App Router and avoids universal claims about version-dependent cache defaults.
+
+## Interface copy cleanup — October 26, 2026
+
+Removed introductory paragraphs, slogans, general-use instructions, keyboard hints, motivational feedback, and repeated screen descriptions across the interface. Kept concise labels, actual status/error messages, question explanations/references, topic scope descriptions, scoring labels, and the reset confirmation. The full coverage grid remains on Progress; home shows compact question-bank totals. Offline shell version is v6.
+
+Verified home at 320, 390, 844, and 1440 pixel widths without horizontal overflow. In a 390×844 touch-emulated browser, checked Topics, Progress, reset/cancel, ten blank questions (nine correct and one revealed), feedback, results, answer review, and offline reload. Removed phrases were absent across these screens. Grading remained 9/10, answer explanations remained visible, all 18 topics remained available, and no JavaScript page errors were captured. Bank validation still reports 183 questions. These checks are local browser emulation.

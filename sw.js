@@ -1,7 +1,7 @@
 /* Bump this cache version whenever any file in ASSETS changes.
    New workers wait for existing windows to close, keeping a session on one version. */
 const CACHE_PREFIX = 'systems-after-hours-shell-';
-const CACHE_NAME = `${CACHE_PREFIX}v5`;
+const CACHE_NAME = `${CACHE_PREFIX}v6`;
 const ASSETS = [
   './', './index.html', './styles.css', './questions.js', './app.js', './pwa.js',
   './favicon.svg', './manifest.webmanifest',

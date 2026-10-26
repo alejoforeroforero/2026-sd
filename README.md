@@ -38,6 +38,10 @@ For website updates, connect to the internet, open the app to let it download a 
 
 Implementation references: [WebKit Home Screen web apps](https://webkit.org/blog/13878/), [WebKit safe-area guidance](https://webkit.org/blog/7929/designing-websites-for-iphone-x/), and [Apple’s explanation of separate Home Screen storage](https://developer.apple.com/videos/play/wwdc2023/10120/).
 
+## Interface
+
+The interface uses compact screen titles and controls without introductory text, slogans, keyboard tips, or general app instructions. Question explanations, references, topic descriptions, scoring labels, empty states, and the reset confirmation remain. The question coverage map is on Progress; the home screen shows compact bank totals.
+
 ## Study behavior
 
 - Choose 10, 20, 40, or all available questions. If filters leave fewer, the session uses that number.

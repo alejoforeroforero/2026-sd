@@ -135,13 +135,6 @@ main:focus {
   letter-spacing:2px;
   margin-top:4px;
   color:var(--muted)}
-.header-note {
-  font-size:12px;
-  color:var(--muted);
-  display:flex;
-  align-items:center;
-  gap:9px;
-  margin-left:-70px}
 .status-dot {
   width:5px;
   height:5px;
@@ -149,11 +142,6 @@ main:focus {
   border-radius:50%;
   display:inline-block;
   flex-shrink:0}
-.edition {
-  font-family:monospace;
-  font-size:11px;
-  color:var(--quiet);
-  letter-spacing:1px}
 .shell {
   display:grid;
   grid-template-columns:263px minmax(0,1fr);
@@ -228,41 +216,12 @@ main:focus {
   font-size:9px;
   color:var(--quiet);
   white-space:nowrap}
-.sidebar-footer {
-  border-top:1px solid var(--line);
-  margin:30px 10px 0;
-  padding-top:23px;
-  display:flex;
-  align-items:baseline;
-  gap:8px;
-  font-size:10px;
-  color:var(--muted)}
-.sidebar-footer small {
-  display:block;
-  font-size:9px;
-  color:var(--quiet);
-  margin-top:5px}
 main {
   padding:46px 52px 24px;
   min-width:0;
   max-width:1250px;
   width:100%;
   margin:0 auto}
-.intro {
-  margin-bottom:34px}
-.intro .eyebrow {
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:22px}
-.intro p {
-  margin-top:19px;
-  color:var(--muted);
-  font-size:14px}
-.intro.compact {
-  margin-bottom:32px}
-.intro.compact h1 {
-  font-size:43px}
 .study-grid {
   display:grid;
   grid-template-columns:minmax(0,1.38fr) minmax(250px,1fr);
@@ -437,10 +396,6 @@ select {
   margin-top:10px}
 .coverage-panel {
   padding:24px}
-.little-star {
-  color:var(--lamp);
-  font-size:24px;
-  line-height:1}
 .coverage-number {
   font-family:Georgia,serif;
   font-size:69px;
@@ -713,13 +668,6 @@ fieldset:disabled .choice {
   color:var(--muted);
   line-height:1.8;
   letter-spacing:.4px}
-.session-footnote {
-  display:flex;
-  justify-content:space-between;
-  margin-top:20px;
-  font-size:10px;
-  color:var(--quiet);
-  gap:20px}
 .topics-grid {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -927,8 +875,6 @@ dialog p {
 @media(min-width:1450px) {
   main {
   padding-top:60px}
-.intro {
-  margin-bottom:40px}
 .setup-panel {
   padding:30px 34px}
 .coverage-panel {
@@ -987,10 +933,6 @@ dialog p {
   flex-direction:column}
 .coverage-panel .map-legend {
   font-size:8px}
-.intro h1 {
-  font-size:46px}
-.header-note {
-  margin-left:0}
 .topics-grid {
   grid-template-columns:1fr}
 .page-footer {
@@ -1014,8 +956,6 @@ dialog p {
   .masthead {
   height:78px;
   padding:0 22px}
-.header-note {
-  display:none}
 .brand {
   font-size:20px}
 .brand-mark {
@@ -1023,8 +963,6 @@ dialog p {
   width:37px;
   font-size:35px;
   line-height:31px}
-.edition {
-  font-size:10px}
 .shell {
   display:block;
   min-height:calc(100vh - 78px)}
@@ -1050,17 +988,6 @@ dialog p {
   display:none}
 main {
   padding:30px 22px 22px}
-.intro {
-  margin-bottom:28px}
-.intro h1 {
-  font-size:43px;
-  letter-spacing:-1.5px}
-.intro .eyebrow {
-  font-size:9px;
-  margin-bottom:18px}
-.intro p {
-  font-size:13px;
-  margin-top:16px}
 .study-grid {
   gap:26px}
 .coverage-panel {
@@ -1091,8 +1018,6 @@ main {
   margin-bottom:25px}
 .session-toolbar>.small {
   font-size:9px}
-.session-footnote {
-  font-size:9px}
 .session-count {
   font-size:12px}
 .question-actions .primary {
@@ -1108,8 +1033,6 @@ main {
   font-size:8px}
 .topic-card p {
   font-size:11px}
-.intro.compact h1 {
-  font-size:36px}
 .progress-panel {
   padding:22px}
 .progress-stats strong {
@@ -1143,10 +1066,6 @@ main {
   display:none}
 main {
   padding:28px 18px 20px}
-.intro h1 {
-  font-size:37px}
-.intro p {
-  font-size:12px}
 .coverage-footer {
   font-size:9px}
 .coverage-number {
@@ -1193,8 +1112,6 @@ main {
   font-size:10px}
 .session-toolbar>.small {
   display:none}
-.session-footnote span:last-child {
-  display:none}
 .question-actions {
   gap:10px}
 .question-actions>.small {
@@ -1230,8 +1147,6 @@ main {
   font-size:10px}
 .table-heading,.table-row {
   grid-template-columns:1.5fr .65fr .85fr}
-.intro.compact h1 {
-  font-size:34px}
 .feedback {
   padding:16px}
 .feedback p {
@@ -1310,7 +1225,7 @@ body {
   .session-toolbar .text-button { font-size: 13px; }
   .session-footnote { font-size: 11px; }
   .primary-nav button { font-size: 12px; }
-  .intro p, .topic-card p { font-size: 14px; }
+  .topic-card p { font-size: 14px; }
   .setup-panel > .muted, .start-area > span { font-size: 12px; }
   .length-options span { font-size: 11px; }
   .topic-picker summary { font-size: 13px; }
@@ -1343,3 +1258,14 @@ body {
 /* Let the compact session panel fit narrow phone screens. */
 .study-grid > * { min-width: 0; }
 .setup-panel .panel-heading { flex-wrap: wrap; }
+
+/* Compact screen titles; controls and study content lead each screen. */
+.page-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.page-heading h1, .results-header h1 { font-family: inherit; font-size: 26px; font-weight: 500; letter-spacing: -.5px; }
+.page-heading > span { color: var(--muted); font-size: 13px; }
+.coverage-panel h2 { font-size: 17px; }
+.coverage-number { margin: 16px 0; }
+.coverage-footer { margin-top: 16px; }
+.results-header { margin-top: 0; }
+.results-header .score { margin-top: 16px; }
+.page-footer:has(#reset) { justify-content: flex-end; }
