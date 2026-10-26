@@ -10,7 +10,7 @@ Open `index.html` directly, or serve this folder:
 python3 -m http.server 8080
 ```
 
-Then open http://localhost:8080. Browser storage can behave differently for `file:` URLs, so use the local server for reliable previewing.
+Then open http://localhost:8080. Offline service-worker caching is disabled on localhost/loopback addresses to keep local previews current; any older quiz worker and its file caches are removed without clearing saved progress. Offline installation remains enabled on the deployed HTTPS site. Browser storage can behave differently for `file:` URLs, so use the local server for reliable previewing.
 
 ## Publish with Git and Vercel
 
