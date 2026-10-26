@@ -4,13 +4,7 @@ A buildless system design study quiz: **183 questions across 18 topics**, with *
 
 ## Run
 
-Open `index.html` directly, or serve this folder:
-
-```sh
-python3 -m http.server 8080
-```
-
-Then open http://localhost:8080. Offline service-worker caching is disabled on localhost/loopback addresses to keep local previews current; any older quiz worker and its file caches are removed without clearing saved progress. Offline installation remains enabled on the deployed HTTPS site. Browser storage can behave differently for `file:` URLs, so use the local server for reliable previewing.
+Open `index.html` directly or run `python3 -m http.server 8080` in this folder, then open http://localhost:8080. The app does not register an offline worker on any host.
 
 ## Publish with Git and Vercel
 
@@ -24,19 +18,17 @@ The website lives at the root of [alejoforeroforero/2026-sd](https://github.com/
 
 These settings follow [Vercel’s static-site build guidance](https://vercel.com/docs/builds/configure-a-build). Push future website changes to `main`; once Vercel is connected, its Git integration can deploy those pushes. Uploading to GitHub does not itself publish the website.
 
-## Install on your iPhone
+## Use on your iPhone
 
-1. After deployment, open your **HTTPS Vercel URL** in Safari on your iPhone. The computer’s `127.0.0.1` preview URL is not accessible from your phone.
-2. Use **Share → Add to Home Screen**. Keep **Open as Web App** enabled if that option appears, then tap **Add**.
-3. Launch **Systems** from its Home Screen icon while online once so the app can finish caching its files. After that, the questions and explanations work offline while the cached files remain on the device.
+Open **https://2026-sd.vercel.app/latest** online once to bypass any old cached homepage. The new page removes this quiz’s previous offline registration and file caches. Existing answers, bookmarks, and saved sessions stay in localStorage.
 
-The app includes a standalone web-app manifest, iPhone PNG icon, safe-area spacing, large touch controls, and 16px form fields. It allows portrait and landscape use and does not disable pinch zoom. Offline support uses a small service worker, with no backend or extra dependencies.
+You can still use Safari’s **Share → Add to Home Screen** and launch the standalone app. This app is now **online-only**: HTML and assets use no-store response headers, and no new offline caches are created. Keep the phone connected when opening or refreshing it. Existing Home Screen installations may need to be fully closed and reopened online once so the retirement worker can replace their old worker. iOS may use separate storage for Safari and Home Screen apps.
 
-Study consistently from the Home Screen app: iOS can keep its storage separate from Safari tabs. Progress is still local to that installation and device, without cloud sync. Removing website data can erase it; the operating system can also evict cached resources.
+`sw.js` remains at its original URL only to retire old registrations: it skips waiting, deletes only the quiz’s file caches, unregisters itself, and navigates open app clients to the network version. It has no fetch handler. `pwa.js` also cleans up any remaining quiz registration on a fresh page, without registering another worker. Neither file clears localStorage.
 
-For website updates, connect to the internet, open the app to let it download a new version, close all open app windows, and reopen. Updates wait for existing windows to close so an in-progress session does not mix JavaScript and question-bank versions.
+`vercel.json` disables browser/CDN response caching and maps `/latest` to the same app. Release query strings on the app’s stylesheet/scripts bypass previously cached unversioned files during migration. The manifest and icons remain for Home Screen use.
 
-Implementation references: [WebKit Home Screen web apps](https://webkit.org/blog/13878/), [WebKit safe-area guidance](https://webkit.org/blog/7929/designing-websites-for-iphone-x/), and [Apple’s explanation of separate Home Screen storage](https://developer.apple.com/videos/play/wwdc2023/10120/).
+References: [Chrome’s worker retirement guidance](https://developer.chrome.com/docs/workbox/remove-buggy-service-workers), [Vercel cache headers](https://vercel.com/docs/caching/cache-control-headers).
 
 ## Interface
 
@@ -65,7 +57,7 @@ Choose **Requirements & architecture** from the topic list (or Explore topics on
 | Non-functional requirements | How well must it work? | Durable storage; updates within one second under agreed conditions. |
 | High-level architecture | What components support that? | Object storage, metadata database, backend API, SSE. |
 
-The new scenarios ask you to classify statements, match the question to the stage, correct misplaced component choices, and distinguish a capability from a quality target and its supporting design. Explanations compare the categories rather than relying on isolated keywords. Existing question IDs and the saved-progress version are unchanged, so earlier progress and sessions remain valid. The offline file cache is versioned separately to deliver the expanded bank.
+The new scenarios ask you to classify statements, match the question to the stage, correct misplaced component choices, and distinguish a capability from a quality target and its supporting design. Explanations compare the categories rather than relying on isolated keywords. Existing question IDs and the saved-progress version are unchanged, so earlier progress and sessions remain valid. The app now loads from the network without an offline file cache.
 
 ## Developer interview fundamentals
 
@@ -77,7 +69,7 @@ Added **15 React**, **15 Next.js**, and **15 Node.js & JavaScript** questions. T
 
 Each new question links to its primary documentation after answering and in the answer review. References were checked October 26, 2026; see [SOURCES.md](SOURCES.md). Next.js questions identify the App Router and avoid treating version-dependent caching defaults as universal. API-recall questions name their context (for example, TypeScript route files). This is useful interview practice, not a claim that any particular employer will ask these exact questions.
 
-Existing question IDs and stored progress remain unchanged. The offline shell is now v4, so the installed iPhone app can download the expanded bank without resetting history.
+Existing question IDs and stored progress remain unchanged. Offline caching has since been removed; the app now loads from the network.
 
 ## Content and coverage
 
@@ -96,7 +88,8 @@ This is broad coverage of **your current material**, not an exhaustive catalog o
 - `questions.js`: self-contained bank. `mc(prompt, correctAnswer, threeDistractors, explanation)` or `blank(prompt, acceptedAnswers, explanation)` adds a question to its section.
 - `app.js`: session, grading, filters, progress, rendering, and browser storage.
 - `manifest.webmanifest`, `icons/`: Home Screen launch settings and icons.
-- `pwa.js`, `sw.js`: optional offline installation and versioned file caching. Whenever a cached website file changes, increment `CACHE_NAME` in `sw.js`. The cache version and question-bank data version serve different purposes.
+- `pwa.js`, `sw.js`: retirement of old quiz workers and file caches. Keep `sw.js` available for previously installed clients; it must not cache or intercept requests.
+- `vercel.json`: no-store browser/CDN headers and the `/latest` recovery URL.
 
 Question IDs are derived from their topic and position within that topic. Append new entries to a topic to preserve existing IDs. If you reorder or repurpose existing entries, bump `version` in `questions.js` so old answer records are not attributed to different questions. Also update the visible counts when changing the bank size.
 
