@@ -1378,3 +1378,9 @@ body {
   .primary-nav button { padding: 9px 5px; text-align: center; }
   .sidebar-label, .topic-nav, .sidebar-footer, .sidebar.in-session { display: none; }
 }
+
+/* Documentation references stay readable and tappable on phones. */
+.source a { text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+@media (max-width: 760px), (pointer: coarse) {
+  .source a { display: inline-block; min-height: 44px; padding: 8px 0; }
+}

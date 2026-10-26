@@ -42,3 +42,17 @@ Added 18 questions based on the supplied functional / non-functional / high-leve
 - Disabled the network and reloaded: the updated 138-question bank loaded from the v3 offline cache, and the visible format totals were 87 choice / 51 blank.
 
 These are local browser-emulation checks, not a physical iPhone test.
+
+## Developer fundamentals expansion — October 26, 2026
+
+Added 45 questions: 15 each for React, Next.js, and Node.js & JavaScript. The bank now contains 183 questions across 18 topics: 117 multiple-choice and 66 blanks. Each new question includes a primary-documentation link; the reference inventory is in SOURCES.md.
+
+- Bank inventory, source-domain checks, JavaScript syntax, and Git whitespace checks passed.
+- Compared all 138 prior question objects and 15 prior topic records against the previous commit: unchanged. The stored-data version remains 1.
+- In a fresh 390×844 touch-emulated browser, resumed an old one-question session, then completed all 45 new questions. All correct choices and blank aliases were accepted, and the final score was 45/45.
+- All 45 feedback references and all 45 answer-review references matched the corresponding authored URL. Links open separately and carry noopener/noreferrer.
+- No horizontal overflow or JavaScript page errors occurred during the complete mobile session. Visually reviewed the new question and source-link presentation. Documentation links have mobile touch spacing.
+- Earlier answer history, bookmarks, and completed-session count remained intact.
+- After disabling the network and reloading, the v4 cache supplied the 183-question bank and all 18 topics; selecting Next.js created its full 15-question session offline.
+
+These checks use Chromium mobile emulation, not physical iPhone Safari. Primary references were checked on October 26, 2026; Next.js material specifies the App Router and avoids universal claims about version-dependent cache defaults.

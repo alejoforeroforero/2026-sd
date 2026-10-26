@@ -1,6 +1,6 @@
 # Systems After Hours
 
-A buildless system design study quiz: **138 questions across 15 topics**, with **87 multiple-choice** and **51 fill-in-the-blank** questions. Plain HTML, CSS, and JavaScript. No dependencies, backend, database, account, or build command.
+A buildless system design study quiz: **183 questions across 18 topics**, with **117 multiple-choice** and **66 fill-in-the-blank** questions. Plain HTML, CSS, and JavaScript. No dependencies, backend, database, account, or build command.
 
 ## Run
 
@@ -63,9 +63,21 @@ Choose **Requirements & architecture** from the topic list (or Explore topics on
 
 The new scenarios ask you to classify statements, match the question to the stage, correct misplaced component choices, and distinguish a capability from a quality target and its supporting design. Explanations compare the categories rather than relying on isolated keywords. Existing question IDs and the saved-progress version are unchanged, so earlier progress and sessions remain valid. The offline file cache is versioned separately to deliver the expanded bank.
 
+## Developer interview fundamentals
+
+Added **15 React**, **15 Next.js**, and **15 Node.js & JavaScript** questions. These mix practical design/debugging scenarios with recall of key APIs. Select a topic and **All** to practice its complete 15-question set, or include it in mixed sessions.
+
+- React: shared state, state snapshots/updaters, immutable updates, list identity, Effect cleanup, derived state, refs, error boundaries, memoization, custom Hooks, context, and Hook rules.
+- Next.js (App Router): server/client module boundaries, initial HTML, direct server data access, Server Action authorization, cache policies, mutations and other open clients, parallel fetching, webhooks, safe DTOs, route/loading/error files, and public environment variables.
+- Node.js & JavaScript: non-blocking I/O, CPU offloading, promise composition/errors, async loops, streams, cancellation, const semantics, shutdown, closures, and the event loop.
+
+Each new question links to its primary documentation after answering and in the answer review. References were checked October 26, 2026; see [SOURCES.md](SOURCES.md). Next.js questions identify the App Router and avoid treating version-dependent caching defaults as universal. API-recall questions name their context (for example, TypeScript route files). This is useful interview practice, not a claim that any particular employer will ask these exact questions.
+
+Existing question IDs and stored progress remain unchanged. The offline shell is now v4, so the installed iPhone app can download the expanded bank without resetting history.
+
 ## Content and coverage
 
-Topics: requirements/architecture, networking/delivery, databases/modeling, APIs, scaling/capacity, reliability/recovery, caching/consistency, real-time systems, concurrency, security/access, frontend state, rendering/fetching, performance/accessibility, debugging/races, and testing/deployment. Requirements & architecture has 26 questions, including 18 focused comparisons based on your reference table (12 choice, six blanks). The other topics each have eight questions (five choice, three blanks).
+Topics: requirements/architecture, networking/delivery, databases/modeling, APIs, scaling/capacity, reliability/recovery, caching/consistency, real-time systems, concurrency, security/access, frontend state, rendering/fetching, performance/accessibility, debugging/races, testing/deployment, React, Next.js, and Node.js/JavaScript. Requirements & architecture has 26 questions, including 18 focused comparisons based on your reference table (12 choice, six blanks). React, Next.js, and Node.js & JavaScript each have 15 questions (10 choice, five blanks). The remaining 14 topics each have eight questions (five choice, three blanks).
 
 The content is based on the existing SD practice material through Day 14: the collaborative task-management study guide and interview; Days 2–9 networking, PERC data/API/scaling/reliability, collaborative editing and trade-offs; Day 10 frontend architecture/state ownership; Day 11 rendering/fetching/caching; Day 12 performance/accessibility; Day 13 debugging; Day 14 testing/review/deployment. The URL-shortener scenario also draws from the project prompts. Some questions turn the lessons into a small application or calculation exercise.
 
@@ -92,4 +104,4 @@ Node is optional and only needed for this authoring check:
 node check-bank.cjs
 ```
 
-It checks IDs, topic distribution, correct-answer membership, unique choices, blank aliases, and the expected 138-question inventory. The app itself does not require Node.
+It checks IDs, topic distribution, correct-answer membership, unique choices, blank aliases, and the expected 183-question inventory. The app itself does not require Node.
