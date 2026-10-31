@@ -1269,3 +1269,21 @@ body {
 .results-header { margin-top: 0; }
 .results-header .score { margin-top: 16px; }
 .page-footer:has(#reset) { justify-content: flex-end; }
+
+/* Code stays readable on narrow screens without widening the page. */
+.question-code {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+  padding: 18px;
+  margin: 24px 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #121512;
+  color: #edf0e5;
+  font: 14px/1.65 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  tab-size: 2;
+}
+.question-code code { font: inherit; }
+.question-code:focus-visible { outline: 2px solid #bccaa3; outline-offset: 3px; }

@@ -1,6 +1,6 @@
 # Systems After Hours
 
-A buildless system design study quiz: **183 questions across 18 topics**, with **117 multiple-choice** and **66 fill-in-the-blank** questions. Plain HTML, CSS, and JavaScript. No dependencies, backend, database, account, or build command.
+A buildless system design study quiz: **213 questions across 19 topics**, with **135 multiple-choice** and **78 fill-in-the-blank** questions. Plain HTML, CSS, and JavaScript. No dependencies, backend, database, account, or build command.
 
 ## Run
 
@@ -101,4 +101,8 @@ Node is optional and only needed for this authoring check:
 node check-bank.cjs
 ```
 
-It checks IDs, topic distribution, correct-answer membership, unique choices, blank aliases, and the expected 183-question inventory. The app itself does not require Node.
+It checks IDs, topic distribution, correct-answer membership, unique choices, blank aliases, and the expected 213-question inventory. The app itself does not require Node.
+
+## Time & space complexity
+
+30 questions (18 multiple-choice, 12 fill-in-the-blank), including 17 original JavaScript snippets. Covers constant, logarithmic, linear, linearithmic, quadratic and exponential growth; sequential, nested, triangular and independent-input loops; binary/linear search; output vs auxiliary memory; recursive stack depth; memoization and amortized analysis. Questions specify input size, cost assumptions and the case being analyzed. Big O exercises request the tightest bound; notation answers tolerate whitespace, case, and listed exponent aliases. Optional `code` strings are escaped and shown in scrollable blocks during questions and answer review. Existing question IDs and local progress are preserved.

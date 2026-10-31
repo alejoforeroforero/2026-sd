@@ -48,3 +48,11 @@ Reviewed October 26, 2026. New questions link to these primary references indivi
 - [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures)
 - [event loop timers and nexttick](https://nodejs.org/learn/asynchronous-work/event-loop-timers-and-nexttick)
 
+
+## Time & space complexity
+
+Reviewed October 30, 2026. Questions and JavaScript snippets are original exercises.
+
+- [Princeton Algorithms: Analysis of Algorithms](https://algs4.cs.princeton.edu/14analysis/) — growth classes and cost models.
+- [Princeton Algorithms cheatsheet](https://algs4.cs.princeton.edu/cheatsheet/) — search, time and extra-space comparisons.
+- [Cornell CS 2110: Recursion](https://www.cs.cornell.edu/courses/cs2110/2026fa/lectures/lec06/) — recursive calls, stack depth, repeated subproblems and memoization.

@@ -76,3 +76,14 @@ Removed offline caching entirely at the user’s request. sw.js is now a retirem
 Tested migration using a separate local origin and the exact initial Git release (fd2974f): created two mobile-emulated tabs controlled by its v2 worker, confirmed both displayed the 120-question introductory UI, and seeded prior history/bookmarks. Replaced the served files with the new release and refreshed one tab. Both open tabs automatically navigated to the 183-question Session screen; quiz registrations and quiz-prefixed caches were absent afterward. Seeded answer history, bookmarks, completed-session count, and an unrelated cache all remained intact. The /latest recovery path, quiz start, save/exit, and subsequent reload also worked. Bank and JS syntax checks passed. Test server simulates the /latest rewrite; the production rewrite and response headers are defined in vercel.json.
 
 The app is now online-only. Home Screen metadata and local progress remain, but offline launch is intentionally no longer supported. Physical iPhone behavior cannot be verified from this computer.
+
+## October 30, 2026 — time and space complexity
+
+- 213 questions, 19 topics, 135 multiple choice and 78 blanks pass `node check-bank.cjs`.
+- The original 183 questions and 18 topic objects compare equal to the prior bank; data version remains 1.
+- All 17 JavaScript snippets parse. Code is escaped in the question and review views.
+- Completed all 30 new questions in a 375px browser: correct answers graded 30/30; a subsequent revised exponential branching example passed separately.
+- Full Big O answers tolerate whitespace/case and listed exponent aliases; `o ( n² )`, `o( log   n )`, and `O( n + m )` passed. Incorrect `O(n^2)` for a linear fixed-inner-loop example was rejected.
+- Save, reload and resume passed during the session. Results review contains all 17 code blocks.
+- No page overflow at 375px during every question or at 320, 390, 667 and 1280px in answer review; no JavaScript page errors.
+- Physical iPhone testing was not available. Existing online-only cleanup and Vercel no-store headers remain in place.
